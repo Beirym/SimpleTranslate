@@ -1,11 +1,11 @@
 import time
 import keyboard
 import pyperclip
-from win10toast import ToastNotifier
+import plyer.platforms.win.notification
+from plyer import notification
 import alphabets
 
 lang = alphabets.eng_to_rus
-toast = ToastNotifier()
 
 
 def translate():
@@ -19,10 +19,11 @@ def translate():
     pyperclip.copy(''.join(translated_letters))
     last_clipboard_obj = clipboard_obj
 
-    toast.show_toast(
-        "The text has been translated",
-        "The text from the clipboard has been translated into your chosen language and copied!",
-        duration = 10,
+    notification.notify(
+        title="The text has been translated",
+        message="The text from the clipboard has been translated into your chosen language and copied!",
+        timeout = 10,
+        app_name="SimpleTranslate",
     )
 
 
