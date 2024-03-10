@@ -1,3 +1,14 @@
+def is_upper(letter, lang):
+    upper_alphabets = {
+        'eng': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 
+                'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 
+                'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+    }
+    if letter in upper_alphabets[lang]:
+        return True
+    return False
+
+
 eng_to_rus = {
     "a": "ф",
     "b": "и",
